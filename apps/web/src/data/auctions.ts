@@ -1,0 +1,48 @@
+import type { Auction } from "@/types";
+
+export const AUCTIONS: Auction[] = [
+  {
+    id: "auc-001",
+    categoryId: "coaching",
+    cityId: "jorhat",
+    month: "2026-10",
+    bidWindowStart: "2026-10-01",
+    bidWindowEnd: "2026-10-05",
+    status: "open",
+    floorPrice: 1000,
+    capPrice: 10000,
+  },
+  {
+    id: "auc-002",
+    categoryId: "homestays",
+    cityId: "majuli",
+    month: "2026-10",
+    bidWindowStart: "2026-10-01",
+    bidWindowEnd: "2026-10-05",
+    status: "open",
+    floorPrice: 1000,
+    capPrice: 10000,
+  },
+  {
+    id: "auc-003",
+    categoryId: "coaching",
+    cityId: "jorhat",
+    month: "2026-09",
+    bidWindowStart: "2026-09-01",
+    bidWindowEnd: "2026-09-05",
+    status: "settled",
+    floorPrice: 1000,
+    capPrice: 10000,
+  },
+  {
+    id: "auc-004",
+    categoryId: "restaurants-cafes",
+    cityId: "guwahati",
+    month: "2026-09",
+    bidWindowStart: "2026-09-01",
+    bidWindowEnd: "2026-09-05",
+    status: "closed",
+    floorPrice: 1000,
+    capPrice: 10000,
+  },
+];

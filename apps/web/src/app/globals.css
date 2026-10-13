@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../../../../packages/ui/src/styles/globals.css";
+@source "../../../../packages/ui/src";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── Brand Tokens ─────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --color-paper:       #FAF6EE;
+  --color-ink:         #1B1A17;
+  --color-tea-green:   #2F5D3A;
+  --color-gamosa-red:  #B3261E;
+  --color-muted-gold:  #C79A2B;
+
+  /* Stone grey scale */
+  --color-stone-100:   #F5F1EA;
+  --color-stone-200:   #E8E2D7;
+  --color-stone-300:   #D4CCBE;
+  --color-stone-500:   #8C8578;
+  --color-stone-700:   #5A5449;
+  --color-stone-900:   #2C2820;
+
+  /* Override shadcn tokens with brand */
+  --background:        var(--color-paper);
+  --foreground:        var(--color-ink);
+  --card:              #FFFFFF;
+  --card-foreground:   var(--color-ink);
+  --border:            var(--color-stone-200);
+  --input:             var(--color-stone-200);
+  --ring:              var(--color-tea-green);
+  --primary:           var(--color-ink);
+  --primary-foreground: var(--color-paper);
+  --secondary:         var(--color-stone-100);
+  --secondary-foreground: var(--color-stone-700);
+  --muted:             var(--color-stone-100);
+  --muted-foreground:  var(--color-stone-500);
+  --accent:            var(--color-stone-100);
+  --accent-foreground: var(--color-ink);
+  --destructive:       var(--color-gamosa-red);
+  --radius:            0.3rem;
+
+  /* Font variables — swap to next/font/google in production */
+  --font-display:      'Georgia', 'Times New Roman', serif;
+  --font-sans:         system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@theme inline {
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-paper:             var(--color-paper);
+  --color-ink:               var(--color-ink);
+  --color-tea-green:         var(--color-tea-green);
+  --color-gamosa-red:        var(--color-gamosa-red);
+  --color-muted-gold:        var(--color-muted-gold);
+  --color-stone-100:         var(--color-stone-100);
+  --color-stone-200:         var(--color-stone-200);
+  --color-stone-300:         var(--color-stone-300);
+  --color-stone-500:         var(--color-stone-500);
+  --color-stone-700:         var(--color-stone-700);
+  --color-stone-900:         var(--color-stone-900);
+  --color-card:              var(--card);
+  --color-border:            var(--border);
+  --color-primary:           var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-destructive:       var(--destructive);
+  --font-sans:               var(--font-sans);
+  --font-display:            var(--font-display);
+  --radius-sm:               calc(var(--radius) * 0.6);
+  --radius-md:               var(--radius);
+  --radius-lg:               calc(var(--radius) * 1.5);
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible {
+    outline: 2px solid var(--color-tea-green);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Gamosa stripe pattern — pure CSS, no images */
+.gamosa-stripe {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-gamosa-red) 0px,
+    var(--color-gamosa-red) 8px,
+    #FFFFFF 8px,
+    #FFFFFF 12px
+  );
+}
+
+/* Featured gold left border */
+.featured-card {
+  border-left: 4px solid var(--color-muted-gold);
+}
